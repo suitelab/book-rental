@@ -1,0 +1,35 @@
+{
+  "name": "movie-theater",
+  "version": "1.0.0",
+  "description": "Movie theater API server using graphql and cormo",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/suitelab/movie-theater.git"
+  },
+  "keywords": [
+    "graphql",
+    "express",
+    "cormo",
+    "typescript"
+  ],
+  "author": "yoon.homme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suitelab/movie-theater/issues"
+  },
+  "homepage": "https://github.com/suitelab/movie-theater#readme",
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "cormo": "^0.11.0",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "graphql-tools": "^4.0.4",
+    "graphql-yoga": "^1.17.1",
+    "mongodb": "^3.1.13",
+    "typescript": "^3.2.4"
+  }
+}
