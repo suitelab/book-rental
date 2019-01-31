@@ -1,14 +1,14 @@
 {
-  "name": "movie-theater",
+  "name": "book-rental",
   "version": "1.0.0",
-  "description": "Movie theater API server using graphql and cormo",
+  "description": "Book rental API server using graphql and cormo",
   "main": "index.js",
   "scripts": {
     "start": "tsc && node dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/suitelab/movie-theater.git"
+    "url": "git+ssh://git@github.com/suitelab/book-rental.git"
   },
   "keywords": [
     "graphql",
@@ -19,9 +19,9 @@
   "author": "yoon.homme",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/suitelab/movie-theater/issues"
+    "url": "https://github.com/suitelab/book-rental/issues"
   },
-  "homepage": "https://github.com/suitelab/movie-theater#readme",
+  "homepage": "https://github.com/suitelab/book-rental#readme",
   "dependencies": {
     "@types/express": "^4.16.1",
     "cormo": "^0.11.0",

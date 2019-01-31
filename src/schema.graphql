@@ -1,0 +1,31 @@
+type User {
+    id: ID!
+    name: String!
+    lateCount: int!
+    latestLateAt: Date
+}
+
+type Book {
+    id: ID!
+    name: String!
+    author: String!
+    price: Int!
+    publishAt: Date
+}
+
+type Rental {
+    id: ID!
+    userId: ID!
+    bookId: ID!
+    user: User
+    book: Book
+    rentAt: Date!
+}
+
+type Query {
+
+}
+
+type Mutation {
+
+}
