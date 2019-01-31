@@ -3,12 +3,12 @@ import * as cormo from 'cormo';
 const connection = new cormo.Connection('mongodb', { database: 'db' });
 
 @cormo.Model({ connection })
-class User extends cormo.BaseModel {
+export class User extends cormo.BaseModel {
     @cormo.Column(cormo.types.Integer)
     id!: number;
 
     @cormo.Column(String)
-    name?: string;
+    name!: string;
 
     @cormo.Column(cormo.types.Integer)
     lateCount?: number;
@@ -18,7 +18,7 @@ class User extends cormo.BaseModel {
 }
 
 @cormo.Model({ connection })
-class Book extends cormo.BaseModel {
+export class Book extends cormo.BaseModel {
     @cormo.Column(cormo.types.Integer)
     id!: number;
 
@@ -36,7 +36,7 @@ class Book extends cormo.BaseModel {
 }
 
 @cormo.Model({ connection })
-class Rental extends cormo.BaseModel {
+export class Rental extends cormo.BaseModel {
     @cormo.Column(cormo.types.Integer)
     id!: number;
 
@@ -48,10 +48,4 @@ class Rental extends cormo.BaseModel {
 
     @cormo.Column(cormo.types.Date)
     rentAt!: Date;
-}
-
-export default {
-    User,
-    Book,
-    Rental
 }

@@ -1,7 +1,9 @@
+scalar Date
+
 type User {
     id: ID!
     name: String!
-    lateCount: int!
+    lateCount: Int!
     latestLateAt: Date
 }
 
@@ -23,9 +25,35 @@ type Rental {
 }
 
 type Query {
-
+    users: [User]
+    books: [Book]
+    rentals: [Rental]
 }
 
 type Mutation {
-
+    addUser(
+        name: String!
+        lateCount: Int!
+        latestLateAt: Date
+    ): User!
+    editUser(
+        id: ID!
+        name: String
+        lateCount: Int
+        latestLateAt: Date
+    ): Int
+    deleteUser(
+        id: ID!
+    ): Int
+    addBook(
+        name: String!
+        author: String!
+        price: Int!
+        publishAt: Date
+    ): Book!
+    rentABook(
+        userId: ID!
+        bookId: ID!
+        rentAt: Date!
+    ): Rental!
 }

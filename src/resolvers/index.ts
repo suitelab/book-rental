@@ -1,5 +1,9 @@
-import { user } from './user';
+import { Mutation } from './mutation';
+import { Query } from './query';
 
-export default {
-    user
+const resolvers = {
+    Query,
+    Mutation
 }
+
+export default resolvers;
