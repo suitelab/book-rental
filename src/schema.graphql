@@ -7,27 +7,51 @@ type User {
     latestLateAt: Date
 }
 
+enum Category {
+  Novel
+  Poetry
+  Humanity
+  Essay
+  Travel
+}
+
 type Book {
     id: ID!
     name: String!
     author: String!
-    price: Int!
+    price: Int
     publishAt: Date
+    category: Category!
+    locate: String!
 }
 
 type Rental {
     id: ID!
-    userId: ID!
-    bookId: ID!
-    user: User
-    book: Book
-    rentAt: Date!
+    user: User!
+    book: Book!
+    startAt: Date!
+    endAt: Date!
 }
 
 type Query {
     users: [User]
     books: [Book]
     rentals: [Rental]
+    getUser(
+        id: ID
+        name: String
+        lateCount: Int
+        latestLateAt: Date
+    ): User
+    getBook(
+        id: ID
+        name: String
+        author: String
+    ): Book
+    getRentableBook(
+        id: ID
+        
+    ): Book
 }
 
 type Mutation {
@@ -50,10 +74,13 @@ type Mutation {
         author: String!
         price: Int!
         publishAt: Date
+        category: Category!
+        locate: String!
     ): Book!
     rentABook(
-        userId: ID!
-        bookId: ID!
-        rentAt: Date!
+        user_id: ID!
+        book_id: ID!
+        startAt: Date!
+        endAt: Date!
     ): Rental!
 }

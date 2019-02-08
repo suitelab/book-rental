@@ -2,6 +2,14 @@ import * as cormo from 'cormo';
 
 const connection = new cormo.Connection('mongodb', { database: 'db' });
 
+enum Category {
+    Novel,
+    Poetry,
+    Humanity,
+    Essay,
+    Travel
+}
+
 @cormo.Model({ connection })
 export class User extends cormo.BaseModel {
     @cormo.Column(cormo.types.Integer)
@@ -15,6 +23,9 @@ export class User extends cormo.BaseModel {
 
     @cormo.Column(cormo.types.Date)
     latestLateAt?: Date;
+
+    @cormo.HasMany()
+    rentals?: Rental[];
 }
 
 @cormo.Model({ connection })
@@ -33,6 +44,15 @@ export class Book extends cormo.BaseModel {
 
     @cormo.Column(cormo.types.Date)
     publishAt?: Date;
+
+    @cormo.Column(Object)
+    category!: Category;
+
+    @cormo.Column(String)
+    locate!: String;
+
+    @cormo.HasMany()
+    rentals?: Rental[];
 }
 
 @cormo.Model({ connection })
@@ -47,5 +67,8 @@ export class Rental extends cormo.BaseModel {
     book!: Book;
 
     @cormo.Column(cormo.types.Date)
-    rentAt!: Date;
+    startAt!: Date;
+
+    @cormo.Column(cormo.types.Date)
+    endAt!: Date;
 }
